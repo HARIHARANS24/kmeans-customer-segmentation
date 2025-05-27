@@ -21,34 +21,38 @@ This project implements a Customer Segmentation system using unsupervised learni
 ## Project Structure
 ```
 customer_segmentation/
-│
-├── api/
-│   └── main.py                 # FastAPI application for serving predictions
-│
-├── src/
-│   ├── data_processing.py      # Data loading and preprocessing
-│   ├── feature_engineering.py  # Scaler save/load and feature engineering
-│   ├── model.py                # Model training, saving, loading, prediction
-│   └── utils.py                # Utility functions including logging config
-│
-├── streamlit_app/
-│   └── dashboard.py            # Streamlit UI for interactive prediction and visualization
-│
-├── data/
+├── data/                                # Contains raw and potentially processed datasets
 │   └── raw/
-│       └── customers.csv       # Sample customer data (age, income, spending score)
+│       └── customers.csv                # Input CSV file with customer attributes (age, income, score)
 │
-├── tests/
-│   ├── test_model.py           # Unit tests for model module
-│   └── test_feature_engineering.py # Unit tests for scaler and features
+├── src/                                 # Core logic of the pipeline
+│   ├── data_processing.py               # Functions for loading and preparing raw data
+│   ├── feature_engineering.py           # Functions to create or scale features (scaler save/load)
+│   ├── model.py                         # Functions to train, save, load, and predict using the KMeans model
+│   └── utils.py                         # Common utilities (e.g., logging config)
 │
-├── Dockerfile.api              # Dockerfile for FastAPI backend
-├── Dockerfile.dashboard        # Dockerfile for Streamlit dashboard
-├── docker-compose.yml          # Compose file to run API and dashboard together
-├── requirements.txt            # Python dependencies
-├── run_pipeline.py             # Script to preprocess data, train model and save artifacts
-├── README.md                   # Project documentation
-└── .gitignore
+├── api/                                 # FastAPI backend to serve prediction API
+│   └── main.py                          # Main FastAPI app that loads model and handles prediction requests
+│
+├── streamlit_app/                       # Streamlit frontend for interactive UI
+│   └── dashboard.py                     # Streamlit app for taking inputs, predicting segment, and visualizing clusters
+│
+├── models/                              # Stores serialized artifacts
+│   ├── kmeans_model.pkl                 # Trained KMeans clustering model
+│   └── scaler.pkl                       # Scaler used for feature normalization
+│
+├── tests/                               # Unit tests for critical logic
+│   ├── test_model.py                    # Tests for model training and prediction
+│   └── test_feature_engineering.py      # Tests for feature transformation and scaler loading
+│
+├── Dockerfile.api                       # Dockerfile to containerize FastAPI backend
+├── Dockerfile.dashboard                 # Dockerfile to containerize Streamlit frontend
+├── docker-compose.yml                   # Docker Compose file to run both API and dashboard containers
+├── requirements.txt                     # List of Python dependencies to reproduce the environment
+├── run_pipeline.py                      # Pipeline script to preprocess data and train/save model + scaler
+├── README.md                            # Project overview, instructions, and setup guide
+└── .gitignore                           # Git ignore rules (e.g., ignore models, __pycache__)
+
 ```
 
 ---
