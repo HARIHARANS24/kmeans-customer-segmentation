@@ -11,7 +11,7 @@ This project implements a Customer Segmentation system using unsupervised learni
 - 📈 PCA-based cluster visualization
 - 🐳 Dockerized deployment for both API and dashboard
 - 📝 Logging and error handling for robust production-level usage
-- ✅ Unit tests for key components  
+- ✅ Unit tests for key components   
 
 ## 📁 Project Structure
 ```
@@ -168,6 +168,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - Thanks to all contributors
 - Inspired by real-world customer segmentation needs
+
 
 
 
