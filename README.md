@@ -15,45 +15,42 @@ This project implements a Customer Segmentation system using unsupervised learni
   
 ## 📁 Project Structure    
 ``` 
-customer_segmentation/
-├── 📂 data/                                # Contains raw and processed datasets
-│   └── 📂 raw/
-│       └── 📄 customers.csv                # Input CSV file with customer attributes
-│
-├── 📂 src/                                 # Core logic of the pipeline
-│   ├── 📄 __init__.py                     # Package initialization
-│   ├── 📄 config.py                       # Configuration settings
-│   ├── 📄 data_loader.py                  # Data loading utilities
-│   ├── 📄 preprocessing.py                # Data preprocessing functions
-│   ├── 📄 feature_engineering.py          # Feature creation and scaling
-│   ├── 📄 model.py                        # KMeans model implementation
-│   ├── 📄 evaluate.py                     # Model evaluation metrics
-│   ├── 📄 utils.py                        # Common utilities
-│   └── 📄 logger.py                       # Logging configuration
-│
-├── 📂 api/                                 # FastAPI backend
-│   └── 📄 main.py                         # FastAPI application
-│
-├── 📂 streamlit_app/                      # Streamlit frontend
-│   └── 📄 dashboard.py                    # Interactive dashboard
-│
-├── 📂 models/                             # Model artifacts
-│   ├── 📄 kmeans_model.pkl               # Trained KMeans model
-│   └── 📄 scaler.pkl                     # Feature scaler
-│
-├── 📂 notebooks/                          # Jupyter notebooks
-│   └── 📄 analysis.ipynb                 # Data analysis and visualization
-│
-├── 📂 tests/                              # Unit tests
-│   ├── 📄 test_model.py                  # Model tests
-│   └── 📄 test_feature_engineering.py    # Feature engineering tests
-│
-├── 📄 Dockerfile                          # Docker configuration
-├── 📄 docker-compose.yml                 # Docker services orchestration
-├── 📄 requirements.txt                    # Python dependencies
-├── 📄 setup.py                           # Package setup
-├── 📄 run_pipeline.py                    # Pipeline execution script
-└── 📄 README.md                          # Project documentation
+Directory structure:
+└── hariharans24-kmeans-customer-segmentation/
+    ├── README.md
+    ├── docker-compose.yml
+    ├── Dockerfile
+    ├── LICENSE
+    ├── requirements.txt
+    ├── run_pipeline.py
+    ├── setup.py
+    ├── api/
+    │   ├── main.py
+    │   └── __pycache__/
+    ├── data/
+    │   └── raw/
+    │       └── customers.csv
+    ├── models/
+    │   ├── kmeans_model.pkl
+    │   └── scaler.pkl
+    ├── notebooks/
+    │   └── EDA.ipynb
+    ├── src/
+    │   ├── __init__.py
+    │   ├── config.py
+    │   ├── data_loader.py
+    │   ├── evaluate.py
+    │   ├── feature_engineering.py
+    │   ├── logger.py
+    │   ├── model.py
+    │   ├── preprocessing.py
+    │   ├── utils.py
+    │   └── __pycache__/
+    ├── streamlit_app/
+    │   └── dashboard.py
+    └── tests/
+        ├── __init__.py
+        └── test_model.py
 ```
 
 ## 🚀 How It Works
@@ -168,6 +165,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - Thanks to all contributors
 - Inspired by real-world customer segmentation needs
+
 
 
 
